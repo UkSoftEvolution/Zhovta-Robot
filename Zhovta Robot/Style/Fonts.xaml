@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib">
+
+    <FontFamily x:Key="Font.Light">/Zhovta_Robot;component/Resources/#Roboto-Light</FontFamily>
+    <FontFamily x:Key="Font.Bold">/Zhovta_Robot;component/Resources/Font/#Roboto-Bold</FontFamily>
+    
+    <system:Double x:Key="Font.Big">16</system:Double>
+    <system:Double x:Key="Font.Normal">14</system:Double>
+    <system:Double x:Key="Font.Small">12</system:Double>
+
+</ResourceDictionary>
