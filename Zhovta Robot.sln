@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zhovta Robot", "Zhovta Robot\Zhovta Robot.csproj", "{974C8512-3E74-402D-AC31-F50B73ED29D7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engine", "Engine\Engine.csproj", "{D850B604-8540-4C1B-AB23-CCBDDB5AC6DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{974C8512-3E74-402D-AC31-F50B73ED29D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{974C8512-3E74-402D-AC31-F50B73ED29D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{974C8512-3E74-402D-AC31-F50B73ED29D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D850B604-8540-4C1B-AB23-CCBDDB5AC6DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D850B604-8540-4C1B-AB23-CCBDDB5AC6DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D850B604-8540-4C1B-AB23-CCBDDB5AC6DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D850B604-8540-4C1B-AB23-CCBDDB5AC6DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
