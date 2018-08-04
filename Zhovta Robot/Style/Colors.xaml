@@ -9,4 +9,8 @@
 
     <SolidColorBrush x:Key="Color.Icon" Color="#FF808080"/>
 
+    <SolidColorBrush x:Key="Color.Button_Menu.MouseOver" Color="#FF3C464D"/>
+    <SolidColorBrush x:Key="Color.Button_Menu.Pressed" Color="#FF43474D"/>
+    <SolidColorBrush x:Key="Color.Button_Menu.Disabled" Color="#FF009687"/>
+
 </ResourceDictionary>

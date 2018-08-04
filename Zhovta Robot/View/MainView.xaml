@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Background="{StaticResource Color.Background}">
+        Title="Zhovta Robot" Height="450" Width="800" Background="{StaticResource Color.Background}">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
@@ -13,8 +13,29 @@
 
         <Grid Background="{StaticResource Color.Secondary}">
             <StackPanel>
-                
+                <Button
+                    Content="Аккаунты"
+                    Style="{DynamicResource Button_Menu}"/>
+                <Button
+                    Content="Действия робота"
+                    IsEnabled="False"
+                    Style="{DynamicResource Button_Menu}"/>
+                <Button
+                    Content="Логи"
+                    Style="{DynamicResource Button_Menu}"/>
+                <Button
+                    Content="Отчёты"
+                    Style="{DynamicResource Button_Menu}"/>
+                <Button
+                    Content="Настройки"
+                    Style="{DynamicResource Button_Menu}"/>
             </StackPanel>
+            <TextBlock
+                Text="© Uk. Soft-Evolution"
+                FontFamily="{StaticResource Font.Light}"
+                FontSize="{StaticResource Font.Small}"
+                Foreground="{StaticResource Color.Font}"
+                HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
         </Grid>
 
         <Grid Grid.Column="1">
