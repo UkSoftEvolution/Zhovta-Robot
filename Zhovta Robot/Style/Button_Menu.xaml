@@ -21,6 +21,8 @@
         <Setter Property="Cursor" Value="Hand"/>
         <Setter Property="FontFamily" Value="{StaticResource Font.Bold}"/>
         <Setter Property="FontSize" Value="{StaticResource Font.Normal}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource Color.Button_Menu.Border.Default}"/>
+        <Setter Property="BorderThickness" Value="0 0 0 1"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -30,12 +32,15 @@
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
                             <Setter Property="Background" TargetName="border" Value="{StaticResource Color.Button_Menu.MouseOver}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource Color.Button_Menu.Border}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Setter Property="Background" TargetName="border" Value="{StaticResource Color.Button_Menu.Pressed}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource Color.Button_Menu.Border}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Background" TargetName="border" Value="{StaticResource Color.Button_Menu.Disabled}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource Color.Button_Menu.Border}"/>
                             <Setter Property="Cursor" Value="Arrow"/>
                         </Trigger>
                     </ControlTemplate.Triggers>

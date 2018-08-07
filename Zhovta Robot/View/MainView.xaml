@@ -18,7 +18,6 @@
                     Style="{DynamicResource Button_Menu}"/>
                 <Button
                     Content="Действия робота"
-                    IsEnabled="False"
                     Style="{DynamicResource Button_Menu}"/>
                 <Button
                     Content="Логи"
