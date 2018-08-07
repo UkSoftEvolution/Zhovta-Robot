@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Zhovta Robot" Height="450" Width="800" Opacity="1" Background="{StaticResource Color.Background}">
+        Title="Zhovta Robot" Height="450" Width="800" Opacity="1" Background="{StaticResource Color.Background}" Icon="/Zhovta Robot;component/robot.ico">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
