@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Zhovta Robot" Height="450" Width="800" Background="{StaticResource Color.Background}">
+        Title="Zhovta Robot" Height="450" Width="800" Opacity="1" Background="{StaticResource Color.Background}">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
@@ -15,6 +15,7 @@
             <StackPanel>
                 <Button
                     Content="Аккаунты"
+                    IsEnabled="False"
                     Style="{DynamicResource Button_Menu}"/>
                 <Button
                     Content="Действия робота"
@@ -37,8 +38,8 @@
                 HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
         </Grid>
 
-        <Grid Grid.Column="1">
-
+        <Grid Grid.Column="1" Margin="3 0 0 0">
+            <Frame NavigationUIVisibility="Hidden" Source="/Zhovta Robot;component/View/AccountsView.xaml"/>
         </Grid>
     </Grid>
 </Window>
