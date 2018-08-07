@@ -1,19 +1,27 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <!--Цвета блоков-->
     <SolidColorBrush x:Key="Color.Background" Color="#FF18191D"/>
     <SolidColorBrush x:Key="Color.Secondary" Color="#FF282E33"/>
 
+    <!--Цвета для надписпей-->
     <SolidColorBrush x:Key="Color.Font" Color="#FFF5F5F5"/>
     <SolidColorBrush x:Key="Color.Font.Secondary" Color="#FF353C43"/>
 
+    <!--Цвета для иконок-->
     <SolidColorBrush x:Key="Color.Icon" Color="#FF808080"/>
 
+    <!--Цвета для главного меню-->
     <SolidColorBrush x:Key="Color.Button_Menu.MouseOver" Color="#FF3C464D"/>
     <SolidColorBrush x:Key="Color.Button_Menu.Pressed" Color="#FF18191D"/>
     <SolidColorBrush x:Key="Color.Button_Menu.Disabled" Color="#FF009687"/>
 
     <SolidColorBrush x:Key="Color.Button_Menu.Border" Color="#FF009687"/>
     <SolidColorBrush x:Key="Color.Button_Menu.Border.Default" Color="#FF282E33"/>
+
+    <!--Цвета для кнопок навигации-->
+    <SolidColorBrush x:Key="Color.ButtonNavigate.MouseOver" Color="#FF3C464D"/>
+    <SolidColorBrush x:Key="Color.ButtonNavigate.Pressed" Color="#FF18191D"/>
 
 </ResourceDictionary>
