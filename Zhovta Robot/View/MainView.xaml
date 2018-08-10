@@ -35,7 +35,8 @@
                 FontFamily="{StaticResource Font.Light}"
                 FontSize="{StaticResource Font.Small}"
                 Foreground="{StaticResource Color.Font}"
-                HorizontalAlignment="Center" VerticalAlignment="Bottom"/>
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom"/>
         </Grid>
 
         <Grid Grid.Column="1" Margin="3 0 0 0">
