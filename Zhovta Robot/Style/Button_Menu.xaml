@@ -32,6 +32,7 @@
                         <Trigger Property="IsMouseOver" Value="true">
                             <Setter Property="Background" TargetName="border" Value="{StaticResource Color.Button_Menu.MouseOver}"/>
                             <Setter Property="BorderBrush" Value="{StaticResource Color.Button_Menu.Border}"/>
+                            <Setter Property="Foreground" Value="{StaticResource Color.Button_Menu.Border}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
                             <Setter Property="Background" TargetName="border" Value="{StaticResource Color.Button_Menu.Pressed}"/>

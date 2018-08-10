@@ -15,19 +15,23 @@
             <StackPanel>
                 <Button
                     Content="Аккаунты"
-                    IsEnabled="False"
+                    IsEnabled="True"
                     Style="{DynamicResource Button_Menu}"/>
                 <Button
                     Content="Действия робота"
+                    IsEnabled="True"
                     Style="{DynamicResource Button_Menu}"/>
                 <Button
                     Content="Логи"
+                    IsEnabled="True"
                     Style="{DynamicResource Button_Menu}"/>
                 <Button
                     Content="Отчёты"
+                    IsEnabled="True"
                     Style="{DynamicResource Button_Menu}"/>
                 <Button
                     Content="Настройки"
+                    IsEnabled="True"
                     Style="{DynamicResource Button_Menu}"/>
             </StackPanel>
             <TextBlock
