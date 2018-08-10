@@ -8,6 +8,7 @@
     <!--Цвета для надписпей-->
     <SolidColorBrush x:Key="Color.Font" Color="#FFF5F5F5"/>
     <SolidColorBrush x:Key="Color.Font.Secondary" Color="#FF353C43"/>
+    <SolidColorBrush x:Key="Color.Font.Error" Color="#FFF55E4A"/>
 
     <!--Цвета для иконок-->
     <SolidColorBrush x:Key="Color.Icon" Color="#FF808080"/>
@@ -24,4 +25,8 @@
     <SolidColorBrush x:Key="Color.ButtonNavigate.MouseOver" Color="#FF3C464D"/>
     <SolidColorBrush x:Key="Color.ButtonNavigate.Pressed" Color="#FF18191D"/>
 
+    
+    <!--Цвета для текстовых полей-->
+    <SolidColorBrush x:Key="Color.Text.MouseOver" Color="#FF009687"/>
+    <SolidColorBrush x:Key="Color.Text.Focus" Color="#FF009687"/>
 </ResourceDictionary>
