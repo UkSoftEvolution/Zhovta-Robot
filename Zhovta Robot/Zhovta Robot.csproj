@@ -100,9 +100,6 @@
     <Compile Include="View\AccountsView.xaml.cs">
       <DependentUpon>AccountsView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\AddAccountView.xaml.cs">
-      <DependentUpon>AddAccountView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
       <SubType>Code</SubType>
