@@ -1,0 +1,78 @@
+﻿<Page x:Class="Zhovta_Robot.View.ActionsView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Zhovta Robot - Действия робота">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="{StaticResource Color.Secondary}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="33"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0">
+                <Viewbox Width="30" Height="30">
+                    <Canvas Width="24" Height="24">
+                        <Path Data="M12,2A2,2 0 0,1 14,4C14,4.74 13.6,5.39 13,5.73V7H14A7,7 0 0,1 21,14H22A1,1 0 0,1 23,15V18A1,1 0 0,1 22,19H21V20A2,2 0 0,1 19,22H5A2,2 0 0,1 3,20V19H2A1,1 0 0,1 1,18V15A1,1 0 0,1 2,14H3A7,7 0 0,1 10,7H11V5.73C10.4,5.39 10,4.74 10,4A2,2 0 0,1 12,2M7.5,13A2.5,2.5 0 0,0 5,15.5A2.5,2.5 0 0,0 7.5,18A2.5,2.5 0 0,0 10,15.5A2.5,2.5 0 0,0 7.5,13M16.5,13A2.5,2.5 0 0,0 14,15.5A2.5,2.5 0 0,0 16.5,18A2.5,2.5 0 0,0 19,15.5A2.5,2.5 0 0,0 16.5,13Z" Fill="{StaticResource Color.Icon}" />
+                    </Canvas>
+                </Viewbox>
+                <Rectangle
+                    RadiusY="25"
+                    RadiusX="25"
+                    Height="10"
+                    Width="10"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Bottom"
+                    Fill="Red"
+                    Opacity="0.7"/>
+            </Grid>
+
+            <Grid Grid.Column="1">
+                <TextBlock
+                    Text="Отдыхаю"
+                    VerticalAlignment="Center"
+                    Margin="3 0 0 0"
+                    FontFamily="{StaticResource Font.Bold}"
+                    Foreground="{StaticResource Color.Font}"
+                    FontSize="{StaticResource Font.Big}"/>
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="0 3 0 0">
+            <StackPanel>
+                <Grid Background="{StaticResource Color.Secondary}" Margin="0 3 0 0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="28"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid Grid.Column="0">
+                        <Viewbox Width="25" Height="25">
+                            <Canvas Width="25" Height="25">
+                                <Path Data="M4,3H20A2,2 0 0,1 22,5V19A2,2 0 0,1 20,21H4A2,2 0 0,1 2,19V5A2,2 0 0,1 4,3M4,5V13H20V5H4M4,19H11V15H4V19M20,19V15H13V19H20Z" Fill="{StaticResource Color.Icon}" />
+                            </Canvas>
+                        </Viewbox>
+                    </Grid>
+
+                    <Grid Grid.Column="1">
+                        <TextBlock
+                                Text="Продам"
+                                VerticalAlignment="Center"
+                                FontFamily="{StaticResource Font.Bold}"
+                                Foreground="{StaticResource Color.Font}"
+                                FontSize="{StaticResource Font.Big}"/>
+                    </Grid>
+                </Grid>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Page>
