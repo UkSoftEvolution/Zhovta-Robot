@@ -93,6 +93,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\LogsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -109,6 +113,9 @@
     </Compile>
     <Compile Include="View\ActionsView.xaml.cs">
       <DependentUpon>ActionsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\LogsView.xaml.cs">
+      <DependentUpon>LogsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>

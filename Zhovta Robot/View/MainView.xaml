@@ -44,7 +44,7 @@
         </Grid>
 
         <Grid Grid.Column="1" Margin="3 0 0 0">
-            <Frame NavigationUIVisibility="Hidden" Source="/Zhovta Robot;component/View/ActionsView.xaml"/>
+            <Frame NavigationUIVisibility="Hidden" Source="/Zhovta Robot;component/View/LogsView.xaml"/>
         </Grid>
     </Grid>
 </Window>
