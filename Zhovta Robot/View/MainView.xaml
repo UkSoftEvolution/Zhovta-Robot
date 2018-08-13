@@ -3,8 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewmodel="clr-namespace:Zhovta_Robot.ViewModel"
         mc:Ignorable="d"
-        Title="Zhovta Robot" Height="450" Width="800" Opacity="1" Background="{StaticResource Color.Background}" Icon="/Zhovta Robot;component/robot.ico">
+        Title="{Binding Title}" Height="450" Width="800" Opacity="1" Background="{StaticResource Color.Background}" Icon="/Zhovta Robot;component/robot.ico">
+    <Window.DataContext>
+        <viewmodel:MainViewModel/>
+    </Window.DataContext>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
@@ -12,28 +17,23 @@
         </Grid.ColumnDefinitions>
 
         <Grid Background="{StaticResource Color.Secondary}">
-            <StackPanel>
-                <Button
-                    Content="Аккаунты"
-                    IsEnabled="True"
-                    Style="{DynamicResource Button_Menu}"/>
-                <Button
-                    Content="Действия робота"
-                    IsEnabled="True"
-                    Style="{DynamicResource Button_Menu}"/>
-                <Button
-                    Content="Логи"
-                    IsEnabled="True"
-                    Style="{DynamicResource Button_Menu}"/>
-                <Button
-                    Content="Отчёты"
-                    IsEnabled="True"
-                    Style="{DynamicResource Button_Menu}"/>
-                <Button
-                    Content="Настройки"
-                    IsEnabled="True"
-                    Style="{DynamicResource Button_Menu}"/>
-            </StackPanel>
+            <ItemsControl ItemsSource="{Binding Pages}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Button
+                            Content="{Binding Path=PageName}"
+                            IsEnabled="{Binding Path=Enabled}"
+                            Style="{DynamicResource Button_Menu}"
+                            Command="{Binding DataContext.Menu_Click, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"
+                            CommandParameter="{Binding}"/>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
             <TextBlock
                 Text="© Uk. Soft-Evolution"
                 FontFamily="{StaticResource Font.Light}"
@@ -44,7 +44,9 @@
         </Grid>
 
         <Grid Grid.Column="1" Margin="3 0 0 0">
-            <Frame NavigationUIVisibility="Hidden" Source="/Zhovta Robot;component/View/LogsView.xaml"/>
+            <Frame
+                NavigationUIVisibility="Hidden"
+                Content="{Binding PageActive}"/>
         </Grid>
     </Grid>
 </Window>
