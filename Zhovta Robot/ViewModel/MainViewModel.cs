@@ -16,6 +16,9 @@ namespace Zhovta_Robot.ViewModel
         private Page pageActive; //Активная страница
         private PageModel model; //Активная модель
         private string title; //Подпись окна программы
+
+        //ViewModel
+        private AccountsViewModel accountsViewModel; //Аккаунты
         #endregion
 
         #region Constructors
@@ -26,9 +29,11 @@ namespace Zhovta_Robot.ViewModel
         {
             Title = "Zhovta Robot";
 
+            accountsViewModel = new AccountsViewModel();
+
             Pages = new ObservableCollection<PageModel>
             {
-                new PageModel() { PageUri = new AccountsView(), PageName = "Аккаунты", Enabled = true },
+                new PageModel() { PageUri = new AccountsView() { DataContext = accountsViewModel }, PageName = "Аккаунты", Enabled = true },
                 new PageModel() { PageUri = new ActionsView(), PageName = "Действия робота", Enabled = true },
                 new PageModel() { PageUri = new LogsView(), PageName = "Логи", Enabled = true },
                 new PageModel() { PageUri = null, PageName = "Отчёты", Enabled = true },

@@ -101,7 +101,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="Model\AccountModel.cs" />
     <Compile Include="Model\PageModel.cs" />
+    <Compile Include="ViewModel\AccountsViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="View\AccountNavigate.xaml.cs">
       <DependentUpon>AccountNavigate.xaml</DependentUpon>

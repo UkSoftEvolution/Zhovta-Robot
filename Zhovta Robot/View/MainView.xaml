@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:viewmodel="clr-namespace:Zhovta_Robot.ViewModel"
         mc:Ignorable="d"
-        Title="{Binding Title}" Height="450" Width="800" Opacity="1" Background="{StaticResource Color.Background}" Icon="/Zhovta Robot;component/robot.ico">
+        Title="{Binding Title}" Height="450" Width="800" Background="{StaticResource Color.Background}" Icon="/Zhovta Robot;component/robot.ico">
     <Window.DataContext>
         <viewmodel:MainViewModel/>
     </Window.DataContext>
