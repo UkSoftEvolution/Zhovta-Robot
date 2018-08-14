@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zhovta Robot", "Zhovta Robo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Engine", "Engine\Engine.csproj", "{D850B604-8540-4C1B-AB23-CCBDDB5AC6DF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileManagement", "FileManagement\FileManagement.csproj", "{5F7625EE-566B-433E-BBCB-2DEF74447434}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D850B604-8540-4C1B-AB23-CCBDDB5AC6DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D850B604-8540-4C1B-AB23-CCBDDB5AC6DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D850B604-8540-4C1B-AB23-CCBDDB5AC6DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F7625EE-566B-433E-BBCB-2DEF74447434}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F7625EE-566B-433E-BBCB-2DEF74447434}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F7625EE-566B-433E-BBCB-2DEF74447434}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F7625EE-566B-433E-BBCB-2DEF74447434}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

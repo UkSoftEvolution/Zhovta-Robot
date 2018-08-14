@@ -164,6 +164,10 @@
       <Project>{d850b604-8540-4c1b-ab23-ccbddb5ac6df}</Project>
       <Name>Engine</Name>
     </ProjectReference>
+    <ProjectReference Include="..\FileManagement\FileManagement.csproj">
+      <Project>{5f7625ee-566b-433e-bbcb-2def74447434}</Project>
+      <Name>FileManagement</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <SplashScreen Include="SplashScreen.png" />

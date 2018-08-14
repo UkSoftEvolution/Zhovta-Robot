@@ -1,4 +1,5 @@
 ﻿using Engine;
+using FileManagement;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
@@ -187,6 +188,10 @@ namespace Zhovta_Robot.ViewModel
                             accounts.Insert(0, account);
                         else
                             accounts[accounts.IndexOf(accountEdit)] = account;
+
+                        Files files = new Files();
+                        files.Save("Accounts.rbt", accounts);
+
                         window.Close();
                     }
                 }

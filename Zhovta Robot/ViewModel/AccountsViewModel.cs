@@ -1,4 +1,5 @@
 ﻿using Engine;
+using FileManagement;
 using System.Collections.ObjectModel;
 using Zhovta_Robot.Model;
 
@@ -19,11 +20,11 @@ namespace Zhovta_Robot.ViewModel
         /// </summary>
         public AccountsViewModel()
         {
-            Accounts = new ObservableCollection<AccountModel>()
-            {
-                new AccountModel() { Email = "GreshnikAlexM@gmail.com" },
-                new AccountModel() { Email = "uk.soft.evolution@gmail.com" }
-            };
+            Accounts = new ObservableCollection<AccountModel>();
+
+            Files files = new Files();
+            if (files.Load("Accounts.rbt", Accounts))
+                Accounts = (ObservableCollection<AccountModel>)files.DataLoad;
         }
         #endregion
 
@@ -67,6 +68,8 @@ namespace Zhovta_Robot.ViewModel
         public RelayCommand Del_Click => new RelayCommand(obj =>
         {
             Accounts.Remove((obj as AccountModel));
+            Files files = new Files();
+            files.Save("Accounts.rbt", accounts);
         });
         #endregion
     }
