@@ -19,7 +19,7 @@
 
             <Grid Grid.Column="0" Background="{StaticResource Color.Secondary}">
                 <TextBlock
-                    Text="Добавить новый аккаунт"
+                    Text="{Binding Title}"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
                     Margin="3 0 0 0"
@@ -29,7 +29,7 @@
             </Grid>
 
             <Grid Grid.Column="1">
-                <Button Height="25" ToolTip="Закрыть окно" Style="{DynamicResource ButtonNavigatAcc}">
+                <Button Height="25" ToolTip="Закрыть окно" Style="{DynamicResource ButtonNavigatAcc}" Command="{Binding Close_Click}">
                     <Viewbox Width="25" Height="25">
                         <Canvas Width="25" Height="25">
                             <Path Data="M12,2C17.53,2 22,6.47 22,12C22,17.53 17.53,22 12,22C6.47,22 2,17.53 2,12C2,6.47 6.47,2 12,2M15.59,7L12,10.59L8.41,7L7,8.41L10.59,12L7,15.59L8.41,17L12,13.41L15.59,17L17,15.59L13.41,12L17,8.41L15.59,7Z" Fill="{StaticResource Color.Icon}" />
@@ -62,6 +62,7 @@
 
                         <TextBox
                             Style="{DynamicResource Text}"
+                            Text="{Binding Account.Email, UpdateSourceTrigger=PropertyChanged}"
                             Grid.Column="1"
                             ToolTip="E-mail"
                             Margin="3 0 5 0"/>
@@ -82,6 +83,7 @@
 
                         <TextBox
                             Style="{DynamicResource Text}"
+                            Text="{Binding Account.Password, UpdateSourceTrigger=PropertyChanged}"
                             Grid.Column="1"
                             ToolTip="Пароль"
                             Margin="3 0 3 0"/>
@@ -90,9 +92,10 @@
                     <!--Оповещение ошибки-->
                     <Grid Margin="0 20 0 0">
                         <TextBlock
-                            Text="Ошибка подключения"
+                            Text="{Binding TextError}"
                             VerticalAlignment="Center"
                             HorizontalAlignment="Center"
+                            Opacity="{Binding Opacity}"
                             FontFamily="{StaticResource Font.Light}"
                             Foreground="{StaticResource Color.Font.Error}"
                             FontSize="{StaticResource Font.Normal}"/>
@@ -102,7 +105,7 @@
 
             <Grid Grid.Row="1" Margin="0 3 0 0">
                 <!--Кнопка подтверждения-->
-                <Button Style="{DynamicResource ButtonNavigatAcc}" ToolTip="Добавить новый аккаунт">
+                <Button Style="{DynamicResource ButtonNavigatAcc}" ToolTip="Добавить новый аккаунт" Command="{Binding Add_Click}">
                     <Viewbox Width="30" Height="30">
                         <Canvas Width="25" Height="25">
                             <Path Data="M14,10H2V12H14V10M14,6H2V8H14V6M2,16H10V14H2V16M21.5,11.5L23,13L16,20L11.5,15.5L13,14L16,17L21.5,11.5Z" Fill="{StaticResource Color.Icon}" />

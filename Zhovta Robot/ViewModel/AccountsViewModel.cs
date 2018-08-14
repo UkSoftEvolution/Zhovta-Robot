@@ -11,7 +11,6 @@ namespace Zhovta_Robot.ViewModel
     {
         #region Fields
         private ObservableCollection<AccountModel> accounts; //Коллекция аккаунтов
-        private double opacity;
         #endregion
 
         #region Constructors
@@ -49,14 +48,18 @@ namespace Zhovta_Robot.ViewModel
         /// </summary>
         public RelayCommand Add_Click => new RelayCommand(obj =>
         {
-            new AccountNavigate().ShowDialog();
+            AccountNavigate account = new AccountNavigate();
+            account.DataContext = new AccountNavigateViewModel(account, Accounts);
+            account.ShowDialog();
         });
         /// <summary>
         /// Редактирование аккаунта
         /// </summary>
         public RelayCommand Edit_Click => new RelayCommand(obj =>
         {
-            
+            AccountNavigate account = new AccountNavigate();
+            account.DataContext = new AccountNavigateViewModel(account, Accounts, (obj as AccountModel));
+            account.ShowDialog();
         });
         /// <summary>
         /// Удаление аккаунта
