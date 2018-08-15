@@ -34,5 +34,17 @@ namespace Zhovta_Robot.Properties {
                 this["PathFileAccounts"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Logs.log")]
+        public string PathFileLogs {
+            get {
+                return ((string)(this["PathFileLogs"]));
+            }
+            set {
+                this["PathFileLogs"] = value;
+            }
+        }
     }
 }

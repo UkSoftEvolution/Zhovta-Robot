@@ -12,19 +12,29 @@ namespace Zhovta_Robot.ViewModel
     {
         #region Fields
         private ObservableCollection<AccountModel> accounts; //Коллекция аккаунтов
+
+        private LogsViewModel logs; //Логи
         #endregion
 
         #region Constructors
         /// <summary>
         /// Стандартный конструктор для инициализации
         /// </summary>
-        public AccountsViewModel()
+        /// <param name="logs">Логи</param>
+        public AccountsViewModel(LogsViewModel logs)
         {
+            this.logs = logs;
+
             Accounts = new ObservableCollection<AccountModel>();
 
             Files files = new Files();
             if (files.Load(Properties.Settings.Default.PathFileAccounts, Accounts))
+            {
                 Accounts = (ObservableCollection<AccountModel>)files.DataLoad;
+                logs.AddLog(LogsViewModel.Data.Load_File, "Аккаунты успешно загружены");
+            }
+            else
+                logs.AddLog(LogsViewModel.Data.Error, "Ошибка загрузки аккаунтов");
         }
         #endregion
 
@@ -50,7 +60,7 @@ namespace Zhovta_Robot.ViewModel
         public RelayCommand Add_Click => new RelayCommand(obj =>
         {
             AccountNavigate account = new AccountNavigate();
-            account.DataContext = new AccountNavigateViewModel(account, Accounts);
+            account.DataContext = new AccountNavigateViewModel(account, Accounts, logs);
             account.ShowDialog();
         });
         /// <summary>
@@ -59,7 +69,7 @@ namespace Zhovta_Robot.ViewModel
         public RelayCommand Edit_Click => new RelayCommand(obj =>
         {
             AccountNavigate account = new AccountNavigate();
-            account.DataContext = new AccountNavigateViewModel(account, Accounts, (obj as AccountModel));
+            account.DataContext = new AccountNavigateViewModel(account, Accounts, (obj as AccountModel), logs);
             account.ShowDialog();
         });
         /// <summary>
@@ -67,9 +77,19 @@ namespace Zhovta_Robot.ViewModel
         /// </summary>
         public RelayCommand Del_Click => new RelayCommand(obj =>
         {
-            Accounts.Remove((obj as AccountModel));
+            try
+            {
+                Accounts.Remove((obj as AccountModel));
+                logs.AddLog(LogsViewModel.Data.Delete, $"Аккаунт: {(obj as AccountModel).Email}, успешно удалён");
+            }
+            catch
+            { logs.AddLog(LogsViewModel.Data.Delete_Error, $"Ошибка удаления аккаунта: {(obj as AccountModel).Email}"); }
+            
             Files files = new Files();
-            files.Save(Properties.Settings.Default.PathFileAccounts, accounts);
+            if (files.Save(Properties.Settings.Default.PathFileAccounts, accounts))
+                logs.AddLog(LogsViewModel.Data.Save_File, "Аккаунты сохранены");
+            else
+                logs.AddLog(LogsViewModel.Data.Error, "Ошибка сохранения аккаунтов");
         });
         #endregion
     }

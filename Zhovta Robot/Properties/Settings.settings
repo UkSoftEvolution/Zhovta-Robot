@@ -5,5 +5,8 @@
     <Setting Name="PathFileAccounts" Type="System.String" Scope="User">
       <Value Profile="(Default)">Accounts.rbt</Value>
     </Setting>
+    <Setting Name="PathFileLogs" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Logs.log</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

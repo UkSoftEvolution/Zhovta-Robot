@@ -20,6 +20,8 @@ namespace Zhovta_Robot.ViewModel
         private AccountModel account; //Экземпляр аккаунта
         private ObservableCollection<AccountModel> accounts; //Коллекция аккаунтов
         private AccountModel accountEdit; //Аккаунт для редактирования
+        //ViewModel
+        private LogsViewModel logs; //Логи
         #endregion
 
         #region Constructors
@@ -28,8 +30,11 @@ namespace Zhovta_Robot.ViewModel
         /// </summary>
         /// <param name="window">Экземпляр окна</param>
         /// <param name="accounts">Коллекция аккаунтов</param>
-        public AccountNavigateViewModel(Window window, ObservableCollection<AccountModel> accounts)
+        /// <param name="logs">Логи</param>
+        public AccountNavigateViewModel(Window window, ObservableCollection<AccountModel> accounts, LogsViewModel logs)
         {
+            this.logs = logs;
+
             this.window = window;
             this.accounts = accounts;
 
@@ -49,8 +54,11 @@ namespace Zhovta_Robot.ViewModel
         /// <param name="window">Экземпляр окна</param>
         /// <param name="accounts">Коллекция аккаунтов</param>
         /// <param name="accountEdit">Экземпляр аккаунта для редактирования</param>
-        public AccountNavigateViewModel(Window window, ObservableCollection<AccountModel> accounts, AccountModel accountEdit)
+        /// <param name="logs">Логи</param>
+        public AccountNavigateViewModel(Window window, ObservableCollection<AccountModel> accounts, AccountModel accountEdit, LogsViewModel logs)
         {
+            this.logs = logs;
+
             this.window = window;
             this.accounts = accounts;
             this.accountEdit = accountEdit;
@@ -185,12 +193,31 @@ namespace Zhovta_Robot.ViewModel
                         }
 
                         if (accountEdit == null)
-                            accounts.Insert(0, account);
+                        {
+                            try
+                            {
+                                accounts.Insert(0, account);
+                                logs.AddLog(LogsViewModel.Data.Account_Add, $"Аккаунт: {account.Email}, добавлен");
+                            }
+                            catch
+                            { logs.AddLog(LogsViewModel.Data.Error, $"Ошибка добавления аккаунта: {account.Email}"); }
+                        }
                         else
-                            accounts[accounts.IndexOf(accountEdit)] = account;
+                        {
+                            try
+                            {
+                                accounts[accounts.IndexOf(accountEdit)] = account;
+                                logs.AddLog(LogsViewModel.Data.Account_Edit, $"Аккаунт: {accountEdit.Email}, отредактирован");
+                            }
+                            catch
+                            { logs.AddLog(LogsViewModel.Data.Error, $"Ошибка редактирвоания аккаунта: {accountEdit.Email}"); }
+                        }
 
                         Files files = new Files();
-                        files.Save(Properties.Settings.Default.PathFileAccounts, accounts);
+                        if (files.Save(Properties.Settings.Default.PathFileAccounts, accounts))
+                            logs.AddLog(LogsViewModel.Data.Save_File, "Аккаунты сохранены");
+                        else
+                            logs.AddLog(LogsViewModel.Data.Error, "Ошибка сохранения аккаунтов");
 
                         window.Close();
                     }

@@ -102,9 +102,11 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="Model\AccountModel.cs" />
+    <Compile Include="Model\LogsModel.cs" />
     <Compile Include="Model\PageModel.cs" />
     <Compile Include="ViewModel\AccountNavigateViewModel.cs" />
     <Compile Include="ViewModel\AccountsViewModel.cs" />
+    <Compile Include="ViewModel\LogsViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="View\AccountNavigate.xaml.cs">
       <DependentUpon>AccountNavigate.xaml</DependentUpon>

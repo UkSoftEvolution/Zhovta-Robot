@@ -19,6 +19,7 @@ namespace Zhovta_Robot.ViewModel
 
         //ViewModel
         private AccountsViewModel accountsViewModel; //Аккаунты
+        private LogsViewModel logsViewModel; //Логи
         #endregion
 
         #region Constructors
@@ -29,13 +30,14 @@ namespace Zhovta_Robot.ViewModel
         {
             Title = "Zhovta Robot";
 
-            accountsViewModel = new AccountsViewModel();
+            logsViewModel = new LogsViewModel();
+            accountsViewModel = new AccountsViewModel(logsViewModel);
 
             Pages = new ObservableCollection<PageModel>
             {
                 new PageModel() { PageUri = new AccountsView() { DataContext = accountsViewModel }, PageName = "Аккаунты", Enabled = true },
                 new PageModel() { PageUri = new ActionsView(), PageName = "Действия робота", Enabled = true },
-                new PageModel() { PageUri = new LogsView(), PageName = "Логи", Enabled = true },
+                new PageModel() { PageUri = new LogsView() {DataContext = logsViewModel }, PageName = "Логи", Enabled = true },
                 new PageModel() { PageUri = null, PageName = "Отчёты", Enabled = true },
                 new PageModel() { PageUri = null, PageName = "Настройки", Enabled = true }
             };

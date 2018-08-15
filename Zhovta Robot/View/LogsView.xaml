@@ -8,80 +8,54 @@
       Title="Zhovta Robot - Логи">
 
     <Grid>
-        <StackPanel>
-            <Grid Background="{StaticResource Color.Secondary}" Margin="0 3 0 0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="28"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="200"/>
-                </Grid.ColumnDefinitions>
+        <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
+            <ItemsControl ItemsSource="{Binding Logs}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Background="{StaticResource Color.Secondary}" Margin="0 0 0 3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="28"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="200"/>
+                            </Grid.ColumnDefinitions>
 
-                <Grid Grid.Column="0">
-                    <Viewbox Width="25" Height="25">
-                        <Canvas Width="25" Height="25">
-                            <Path Data="M13,13H11V7H13M13,17H11V15H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"
+                            <Grid Grid.Column="0">
+                                <Viewbox Width="25" Height="25">
+                                    <Canvas Width="25" Height="25">
+                                        <Path Data="{Binding Data}"
                                   Fill="{StaticResource Color.Icon}" />
-                        </Canvas>
-                    </Viewbox>
-                </Grid>
+                                    </Canvas>
+                                </Viewbox>
+                            </Grid>
 
-                <Grid Grid.Column="1">
-                    <TextBlock
-                        Text="Ошибка"
-                        VerticalAlignment="Center"
-                        FontFamily="{StaticResource Font.Bold}"
-                        Foreground="{StaticResource Color.Font}"
-                        FontSize="{StaticResource Font.Big}"/>
-                </Grid>
+                            <Grid Grid.Column="1">
+                                <TextBlock
+                                    Text="{Binding Description}"
+                                    VerticalAlignment="Center"
+                                    FontFamily="{StaticResource Font.Bold}"
+                                    Foreground="{StaticResource Color.Font}"
+                                    FontSize="{StaticResource Font.Big}"/>
+                            </Grid>
 
-                <Grid Grid.Column="2">
-                    <TextBlock
-                        Margin="0 0 3 3"
-                        Text="00.00.0000 00:00:00"
-                        VerticalAlignment="Bottom"
-                        HorizontalAlignment="Right"
-                        FontFamily="{StaticResource Font.Light}"
-                        Foreground="{StaticResource Color.Font}"
-                        FontSize="{StaticResource Font.Small}"/>
-                </Grid>
-            </Grid>
-
-            <Grid Background="{StaticResource Color.Secondary}" Margin="0 3 0 0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="28"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="200"/>
-                </Grid.ColumnDefinitions>
-
-                <Grid Grid.Column="0">
-                    <Viewbox Width="25" Height="25">
-                        <Canvas Width="25" Height="25">
-                            <Path Data="M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M19,3H14.82C14.4,1.84 13.3,1 12,1C10.7,1 9.6,1.84 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3Z"
-                                  Fill="{StaticResource Color.Icon}" />
-                        </Canvas>
-                    </Viewbox>
-                </Grid>
-
-                <Grid Grid.Column="1">
-                    <TextBlock
-                        Text="Успешная авторизация"
-                        VerticalAlignment="Center"
-                        FontFamily="{StaticResource Font.Bold}"
-                        Foreground="{StaticResource Color.Font}"
-                        FontSize="{StaticResource Font.Big}"/>
-                </Grid>
-
-                <Grid Grid.Column="2">
-                    <TextBlock
-                        Margin="0 0 3 3"
-                        Text="00.00.0000 00:00:00"
-                        VerticalAlignment="Bottom"
-                        HorizontalAlignment="Right"
-                        FontFamily="{StaticResource Font.Light}"
-                        Foreground="{StaticResource Color.Font}"
-                        FontSize="{StaticResource Font.Small}"/>
-                </Grid>
-            </Grid>
-        </StackPanel>
+                            <Grid Grid.Column="2">
+                                <TextBlock
+                                    Margin="0 0 3 3"
+                                    Text="{Binding Date}"
+                                    VerticalAlignment="Bottom"
+                                    HorizontalAlignment="Right"
+                                    FontFamily="{StaticResource Font.Light}"
+                                    Foreground="{StaticResource Color.Font}"
+                                    FontSize="{StaticResource Font.Small}"/>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </ScrollViewer>
     </Grid>
 </Page>
