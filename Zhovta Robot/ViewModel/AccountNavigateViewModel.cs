@@ -190,7 +190,7 @@ namespace Zhovta_Robot.ViewModel
                             accounts[accounts.IndexOf(accountEdit)] = account;
 
                         Files files = new Files();
-                        files.Save("Accounts.rbt", accounts);
+                        files.Save(Properties.Settings.Default.PathFileAccounts, accounts);
 
                         window.Close();
                     }

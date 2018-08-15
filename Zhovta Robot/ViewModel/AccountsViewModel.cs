@@ -23,7 +23,7 @@ namespace Zhovta_Robot.ViewModel
             Accounts = new ObservableCollection<AccountModel>();
 
             Files files = new Files();
-            if (files.Load("Accounts.rbt", Accounts))
+            if (files.Load(Properties.Settings.Default.PathFileAccounts, Accounts))
                 Accounts = (ObservableCollection<AccountModel>)files.DataLoad;
         }
         #endregion
@@ -69,7 +69,7 @@ namespace Zhovta_Robot.ViewModel
         {
             Accounts.Remove((obj as AccountModel));
             Files files = new Files();
-            files.Save("Accounts.rbt", accounts);
+            files.Save(Properties.Settings.Default.PathFileAccounts, accounts);
         });
         #endregion
     }
